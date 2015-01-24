@@ -681,6 +681,10 @@
     <instance objName="wall" x="7936" y="0" name="inst_59A0DD98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="8000" y="0" name="inst_BFD7E197" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="8064" y="0" name="inst_3BF6A87A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="reverse_y" x="2112" y="1408" name="inst_578F6CD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="reverse_x" x="2592" y="1376" name="inst_17B35475" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="randomize_letter" x="1984" y="800" name="inst_9917A990" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="add_letter" x="576" y="1184" name="inst_45A6EAD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

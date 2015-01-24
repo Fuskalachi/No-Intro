@@ -39,7 +39,8 @@ control_up=ord('W')
 control_down=ord('S')
 control_left=ord('A')
 control_right=ord('D')
-hacks=true
+
+hacks=false
 if hacks {
     control_low_gravity=ord('L')
     control_high_gravity=ord('K')
@@ -59,6 +60,12 @@ wall_jump_horiz_force=40
 wall_jump_vert_force=30
 wall_speed_cap=1
 jump_force=30
+
+key_dictionary=ds_list_create()
+ds_list_add(key_dictionary,'A','W','S','D')
+unused_letters=ds_list_create()
+ds_list_add(unused_letters,'Q','E','R','T','Y','U','I','O','P','F','G','H','J','K','L')
+ds_list_add(unused_letters,'Z','X','C','V','B','N','M')
 </string>
           </argument>
         </arguments>
@@ -244,8 +251,8 @@ if place_empty(x,y) {
     }
 }
 else { //inside object?
-   x=200
-   y=400
+   //x=200
+   //y=400
 }
 </string>
           </argument>
