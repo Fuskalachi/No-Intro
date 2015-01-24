@@ -25,9 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ds_list_shuffle(other.unused_letters)
-ds_list_add(other.key_dictionary,other.unused_letters[|0])
-ds_list_delete(other.unused_letters,0)
+            <string>if not ds_list_empty(other.unused_letters) {
+    ds_list_shuffle(other.unused_letters)
+    ds_list_add(other.key_dictionary,other.unused_letters[|0])
+    ds_list_delete(other.unused_letters,0)
+}
 </string>
           </argument>
         </arguments>
