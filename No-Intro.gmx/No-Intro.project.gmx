@@ -8,14 +8,17 @@
   <sprites name="sprites">
     <sprite>sprites\player_sprite</sprite>
     <sprite>sprites\wall_sprite</sprite>
+    <sprite>sprites\spt_wood_wall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\ts_example</background>
+    <background>background\wood_tileset</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\wall</object>
+    <object>objects\obj_wood_wall</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
