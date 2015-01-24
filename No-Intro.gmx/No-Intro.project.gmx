@@ -13,7 +13,6 @@
     <background>background\ts_example</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\wall</object>
