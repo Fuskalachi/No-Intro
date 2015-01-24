@@ -29,7 +29,35 @@
 y_speed=0
 x_accel=0
 y_accel=0
+wall_jump_on=true
+wall_cling_on=true
+left_on=true
+right_on=true
+jump_on=true
 
+control_up=ord('W')
+control_down=ord('S')
+control_left=ord('A')
+control_right=ord('D')
+hacks=true
+if hacks {
+    control_low_gravity=ord('L')
+    control_high_gravity=ord('K')
+    control_left_rocket=vk_left
+    control_right_rocket=vk_right
+    control_up_rocket=vk_up
+}
+
+grav=2
+max_horiz_speed=20
+ground_control_horiz_force=20
+air_control_horiz_force=5
+decel_horiz_force=2
+friction_force=1
+wall_jump_horiz_force=40
+wall_jump_vert_force=30
+wall_speed_cap=1
+jump_force=30
 </string>
           </argument>
         </arguments>
@@ -52,41 +80,31 @@ y_accel=0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>control_up=ord('W')
-control_down=ord('S')
-control_left=ord('A')
-control_right=ord('D')
-control_low_gravity=ord('L')
-control_high_gravity=ord('K')
+            <string>if hacks{
+    if keyboard_check(control_low_gravity)
+        grav=1
+    else if keyboard_check(control_high_gravity)
+        grav=5
+    else
+        grav=2
+}
 
-
-jump_force=30
-grav=3
-if keyboard_check(control_low_gravity)
-    grav=2
-if keyboard_check(control_high_gravity)
-    grav=10
-max_horiz_speed=25
-ground_control_horiz_force=15
-air_control_horiz_force=5
-decel_horiz_force=15
-friction_force=8
 
 if place_empty(x,y) {
     if not place_empty(x,y+1) { //on solid ground
-        if keyboard_check(control_up)  {
+        if keyboard_check(control_up) and jump_on  {
             y_accel=-jump_force         
         } else {
             y_accel=0
         }
         x_speed=0 //firm stopping when hitting ground
-        if keyboard_check(control_left){
+        if keyboard_check(control_left) and left_on{
             x_accel=-ground_control_horiz_force
-            if keyboard_check(control_right)
+            if keyboard_check(control_right) and right_on
                 x_accel=0 //multiple directions cancel
         }
         else {
-            if keyboard_check(control_right) {
+            if keyboard_check(control_right) and right_on{
                 x_accel=ground_control_horiz_force
             } else {
                 x_accel=0 //firm stop on ground with no key press
@@ -94,37 +112,95 @@ if place_empty(x,y) {
         }
     } else {
         y_accel=grav
-        if keyboard_check(control_left){
-            if x_speed &lt; 0
-                x_accel=-air_control_horiz_force
-            else
-                x_accel=-decel_horiz_force
-            if keyboard_check(control_right)
-                x_accel=0 //multiple directions cancel
-        }
-        else {
-            if keyboard_check(control_right) {
-                if x_speed &gt; 0 //accelerate slow
-                    x_accel=air_control_horiz_force
-                else 
-                    x_accel=decel_horiz_force
-            }
-            else {//friction
-                if x_speed&lt;0 
-                    if x_speed&lt;-friction_force
-                        x_accel=friction_force
-                    else
-                        x_accel=-x_speed
+        if not place_empty(x+1,y) { //touching wall on right
+            if keyboard_check(control_left) and left_on{
+                if keyboard_check(control_right) and right_on
+                    x_accel=0 //multiple directions cancel
                 else {
-                    if x_speed&gt;0
-                        if x_speed&gt;friction_force
-                            x_accel=-friction_force
-                        else
-                            x_accel=-x_speed
-                    else 
-                        x_accel=0
+                    if keyboard_check(control_up) and wall_jump_on{ 
+                        //do a wall jump
+                        x_accel=-wall_jump_horiz_force
+                        y_accel=-wall_jump_vert_force
+                        x_speed=0 //brace against wall
+                        y_speed=0
+                    } else {
+                        x_speed=0
+                    }
+                }
+            } else {
+                x_speed=0
+                if y_speed&gt;wall_speed_cap and keyboard_check(control_right) and right_on and wall_cling_on{ //cling to wall and slow fall
+                    y_speed=wall_speed_cap
+                    y_accel=0
                 }
             }
+        } else if not place_empty(x-1,y) { //touching wall on left
+            if keyboard_check(control_right) and right_on{
+                if keyboard_check(control_left) and left_on
+                    x_accel=0 //multiple directions cancel
+                else {
+                    if keyboard_check(control_up) and wall_jump_on { //touching wall on left
+                        //do a wall jump
+                        x_accel=wall_jump_horiz_force
+                        y_accel=-wall_jump_vert_force
+                        x_speed=0 //brace against wall
+                        y_speed=0
+                    } else {
+                        x_speed=0
+                    }
+                }
+            }
+            else {
+                x_speed=0
+                if y_speed&gt;wall_speed_cap and keyboard_check(control_left) and left_on and wall_cling_on{
+                    y_speed=wall_speed_cap
+                    y_accel=0
+                }
+            }
+        } else { //not touching wall
+            if keyboard_check(control_left) and left_on{
+                if keyboard_check(control_right)and right_on
+                    x_accel=0 //multiple directions cancel
+                else {
+                    if x_speed &lt; 0
+                        x_accel=-air_control_horiz_force
+                    else
+                        x_accel=-decel_horiz_force
+                }
+            }
+            else {
+                if keyboard_check(control_right) and right_on{
+                    if x_speed &gt; 0 //accelerate slow
+                        x_accel=air_control_horiz_force
+                    else 
+                        x_accel=decel_horiz_force
+                }
+                else { //friction
+                    if x_speed&lt;0 
+                        if x_speed&lt;-friction_force
+                            x_accel=friction_force
+                        else
+                            x_accel=-x_speed
+                    else {
+                        if x_speed&gt;0
+                            if x_speed&gt;friction_force
+                                x_accel=-friction_force
+                            else
+                                x_accel=-x_speed
+                        else 
+                            x_accel=0
+                    }
+                }
+            }
+        }
+    }
+    if hacks{
+        if keyboard_check_pressed(control_left_rocket) {
+            x_speed=-120
+        } else if keyboard_check_pressed(control_right_rocket) {
+            x_speed=120
+        } else if keyboard_check_pressed(control_up_rocket) {
+            y_speed=-120
         }
     }
     //accelerations set, update speed
@@ -133,9 +209,9 @@ if place_empty(x,y) {
         x_speed+=x_accel
     else {
         if x_speed&lt;=-max_horiz_speed //cap speed
-            x_speed=-max_horiz_speed
+            x_speed=-max_horiz_speed+(x_speed+max_horiz_speed) div 2
         else if x_speed&gt;=max_horiz_speed
-            x_speed=max_horiz_speed
+            x_speed=max_horiz_speed+(x_speed-max_horiz_speed) div 2
     }
     //move object
     if x_speed&lt;0 {   

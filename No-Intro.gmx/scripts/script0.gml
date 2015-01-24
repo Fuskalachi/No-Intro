@@ -6,4 +6,3 @@
 //}
 
 //place_meeting(x, y, param_obj_type)
-
