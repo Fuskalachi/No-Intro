@@ -61,6 +61,8 @@
     <object>objects\obj_breaking_block</object>
     <object>objects\obj_spikes</object>
     <object>objects\obj_special_platform_1</object>
+    <object>objects\reverse_x</object>
+    <object>objects\reverse_y</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\title_screen</room>
@@ -68,6 +70,7 @@
     <room>rooms\smell_my_pit</room>
     <room>rooms\loop_section</room>
     <room>rooms\random1</room>
+    <room>rooms\saw_chase</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
