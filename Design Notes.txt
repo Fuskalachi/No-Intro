@@ -1,0 +1,8 @@
+Asset list
+
+hardwood floor/wall tileset
+metal floor/wall tileset
+box/crate
+
+http://opengameart.org/sites/default/files/styles/watermarked/public/path_tiles_example_rounded.png
+https://s-media-cache-ak0.pinimg.com/236x/43/23/c5/4323c5fb58e459a5eec24a2264aecb06.jpg
