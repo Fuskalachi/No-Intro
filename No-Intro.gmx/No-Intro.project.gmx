@@ -35,6 +35,7 @@
     <sprite>sprites\spt_breaking_block</sprite>
     <sprite>sprites\spt_spikes</sprite>
     <sprite>sprites\spt_special_platform</sprite>
+    <sprite>sprites\spt_turret</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\wood_tileset</background>
@@ -63,6 +64,7 @@
     <object>objects\obj_special_platform_1</object>
     <object>objects\reverse_x</object>
     <object>objects\reverse_y</object>
+    <object>objects\obj_turret</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\title_screen</room>

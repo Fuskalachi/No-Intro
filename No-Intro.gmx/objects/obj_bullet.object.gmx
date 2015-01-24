@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not place_free(x, y)
-{
-    instance_destroy()
-}
+            <string>if not place_free(x, y) instance_destroy()
 </string>
           </argument>
         </arguments>
