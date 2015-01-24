@@ -21,12 +21,18 @@
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spt_metal_wall</sprite>
     <sprite>sprites\spt_wood_temp</sprite>
-    <sprite>sprites\spt_wood_wall_new</sprite>
     <sprite>sprites\temp_button_sprite</sprite>
     <sprite>sprites\bullet</sprite>
     <sprite>sprites\fart</sprite>
     <sprite>sprites\boss_sprite</sprite>
     <sprite>sprites\spt_blank</sprite>
+    <sprite>sprites\spt_bitcoin</sprite>
+    <sprite>sprites\spt_plant</sprite>
+    <sprite>sprites\spt_light</sprite>
+    <sprite>sprites\spt_button_start</sprite>
+    <sprite>sprites\spt_prop</sprite>
+    <sprite>sprites\spt_saw</sprite>
+    <sprite>sprites\sprite46</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\wood_tileset</background>
@@ -35,8 +41,15 @@
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\level_button_1</object>
     <object>objects\player</object>
     <object>objects\wall</object>
+    <object>objects\menu_button_levels</object>
+    <object>objects\menu_button_start</object>
+    <object>objects\menu_button_exit</object>
+    <object>objects\add_letter</object>
+    <object>objects\randomize_letter</object>
+    <object>objects\level_button_menu</object>
     <object>objects\obj_metal_wall</object>
     <object>objects\obj_wood_wall</object>
     <object>objects\obj_bullet</object>
@@ -45,7 +58,7 @@
     <object>objects\obj_bitcoin</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\title_screen</room>
     <room>rooms\smell_my_pit</room>
     <room>rooms\loop_section</room>
   </rooms>
