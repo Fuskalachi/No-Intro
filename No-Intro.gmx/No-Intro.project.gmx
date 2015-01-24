@@ -56,11 +56,14 @@
     <object>objects\boss</object>
     <object>objects\obj_send_back</object>
     <object>objects\obj_bitcoin</object>
+    <object>objects\reverse_x</object>
+    <object>objects\reverse_y</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\title_screen</room>
     <room>rooms\smell_my_pit</room>
     <room>rooms\loop_section</room>
+    <room>rooms\saw_chase</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
