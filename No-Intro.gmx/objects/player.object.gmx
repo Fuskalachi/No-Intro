@@ -302,6 +302,8 @@ else {
             <kind>1</kind>
             <string>if room == smell_my_pit
     room_goto_next()
+else
+    room_restart()
 </string>
           </argument>
         </arguments>

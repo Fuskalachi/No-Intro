@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>room2</room>
+            <room>-100</room>
           </argument>
         </arguments>
       </action>
