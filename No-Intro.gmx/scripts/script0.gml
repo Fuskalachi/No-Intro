@@ -7,4 +7,3 @@ if place_meeting(x, y+1, param_obj_type) and place_meeting(x, y-1, param_obj_typ
 
 place_meeting(x, y, param_obj_type)
 
-
