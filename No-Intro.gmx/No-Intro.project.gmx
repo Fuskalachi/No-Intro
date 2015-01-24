@@ -8,29 +8,13 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprite_player</sprite>
-    <sprites name="Top Down Scroller">
-      <sprite>sprites\sprite_bullet</sprite>
-      <sprite>sprites\sprite_wall</sprite>
-    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <scripts name="scripts">
-    <scripts name="Top Down Scroller">
-      <script>scripts\shoot_bullet.gml</script>
-      <script>scripts\shoot_bullet_position.gml</script>
-    </scripts>
-  </scripts>
   <objects name="objects">
     <object>objects\player</object>
-    <objects name="Top Down Scroller">
-      <object>objects\top_down_player</object>
-      <object>objects\bullet</object>
-      <object>objects\wall</object>
-    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\top_down_room0</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
