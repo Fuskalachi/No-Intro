@@ -13,8 +13,12 @@
     <background>background\ts_example</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\script0.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\player</object>
+    <object>objects\object1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
