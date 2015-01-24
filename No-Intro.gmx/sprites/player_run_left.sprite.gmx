@@ -7,9 +7,9 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>2</bboxmode>
-  <bbox_left>46</bbox_left>
-  <bbox_right>88</bbox_right>
-  <bbox_top>0</bbox_top>
+  <bbox_left>14</bbox_left>
+  <bbox_right>92</bbox_right>
+  <bbox_top>1</bbox_top>
   <bbox_bottom>117</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
@@ -20,12 +20,11 @@
   <width>128</width>
   <height>128</height>
   <frames>
-    <frame index="0">images\idle_0.png</frame>
-    <frame index="1">images\idle_1.png</frame>
-    <frame index="2">images\idle_2.png</frame>
-    <frame index="3">images\idle_3.png</frame>
-    <frame index="4">images\idle_4.png</frame>
-    <frame index="5">images\idle_5.png</frame>
-    <frame index="6">images\idle_6.png</frame>
+    <frame index="0">images\player_run_left_0.png</frame>
+    <frame index="1">images\player_run_left_1.png</frame>
+    <frame index="2">images\player_run_left_2.png</frame>
+    <frame index="3">images\player_run_left_3.png</frame>
+    <frame index="4">images\player_run_left_4.png</frame>
+    <frame index="5">images\player_run_left_5.png</frame>
   </frames>
 </sprite>

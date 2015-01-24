@@ -9,19 +9,45 @@
     <sprite>sprites\player_sprite</sprite>
     <sprite>sprites\wall_sprite</sprite>
     <sprite>sprites\spt_wood_wall</sprite>
+    <sprite>sprites\player_right</sprite>
+    <sprite>sprites\idle</sprite>
+    <sprite>sprites\player_run_right</sprite>
+    <sprite>sprites\player_run_left</sprite>
+    <sprite>sprites\player_left</sprite>
+    <sprite>sprites\sprite_bullet</sprite>
+    <sprite>sprites\sprite_top_down_player</sprite>
+    <sprite>sprites\sprite_wall</sprite>
+    <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\spt_metal_wall</sprite>
+    <sprite>sprites\spt_wood_temp</sprite>
+    <sprite>sprites\spt_wood_wall_new</sprite>
+    <sprite>sprites\temp_button_sprite</sprite>
+    <sprite>sprites\bullet</sprite>
+    <sprite>sprites\fart</sprite>
+    <sprite>sprites\boss_sprite</sprite>
+    <sprite>sprites\spt_blank</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\ts_example</background>
     <background>background\wood_tileset</background>
+    <background>background\ts_example</background>
+    <background>background\metal_tileset</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\player</object>
     <object>objects\wall</object>
+    <object>objects\obj_metal_wall</object>
     <object>objects\obj_wood_wall</object>
+    <object>objects\obj_bullet</object>
+    <object>objects\boss</object>
+    <object>objects\obj_send_back</object>
+    <object>objects\obj_bitcoin</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\smell_my_pit</room>
+    <room>rooms\loop_section</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
