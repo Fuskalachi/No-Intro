@@ -1,4 +1,30 @@
-Asset list
+Mechanics for platforming part
+horizontal control reverse trigger
+vertical control reverse trigger
+control scramble trigger
+control normalize trigger
+gravity increase/decrease triggers
+add/remove mechanic trigger
+   
+
+
+
+
+
+
+
+Asset list 
+
+player:
+profile:
+idle
+walk
+run
+jump
+in air
+wall slide
+wall jump
+landing
 
 hardwood floor/wall tileset
 metal floor/wall tileset
