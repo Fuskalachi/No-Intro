@@ -36,11 +36,20 @@
     <sprite>sprites\spt_spikes</sprite>
     <sprite>sprites\spt_special_platform</sprite>
     <sprite>sprites\spt_turret</sprite>
+    <sprite>sprites\spt_ladder</sprite>
+    <sprite>sprites\spt_jump_left</sprite>
+    <sprite>sprites\spt_jump_right</sprite>
+    <sprite>sprites\spt_lr_button</sprite>
+    <sprite>sprites\spt_ud_button</sprite>
+    <sprite>sprites\spt_rando_button</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\wood_tileset</background>
     <background>background\ts_example</background>
     <background>background\metal_tileset</background>
+    <background>background\metal_tileset1</background>
+    <background>background\metal_tileset2</background>
+    <background>background\metal_tileset3</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -65,6 +74,8 @@
     <object>objects\reverse_x</object>
     <object>objects\reverse_y</object>
     <object>objects\obj_turret</object>
+    <object>objects\obj_ladder</object>
+    <object>objects\obj_saw_chase</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\title_screen</room>
@@ -72,6 +83,9 @@
     <room>rooms\smell_my_pit</room>
     <room>rooms\loop_section</room>
     <room>rooms\random1</room>
+    <room>rooms\rob1</room>
+    <room>rooms\rob2</room>
+    <room>rooms\rob3</room>
     <room>rooms\saw_chase</room>
   </rooms>
   <help>

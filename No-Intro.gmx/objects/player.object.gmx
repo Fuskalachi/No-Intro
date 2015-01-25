@@ -69,9 +69,28 @@ ds_list_add(key_dictionary,'A','W','S','D')
 unused_letters=ds_list_create()
 ds_list_add(unused_letters,'Q','E','R','T','Y','U','I','O','P','F','G','H','J','K','L')
 ds_list_add(unused_letters,'Z','X','C','V','B','N','M')
+
+if room == rob3
+    alarm[1] = 3600
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>222</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_next_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="3" enumb="0">
@@ -267,21 +286,46 @@ else { //inside object?
    //y=400
 }
 
-if facing_direction=='left'
-    if x_speed == 0
+if facing_direction=='left' {
+    if place_free(x, y+1) {
+        sprite_index = spt_jump_left
+    } else if x_speed == 0 {
         sprite_index=player_left
-    else
+        image_speed = 0.1
+    } else {
         sprite_index=player_run_left
-else { 
-    if facing_direction=='right'
-    if x_speed == 0
+        image_speed = 0.25
+    } 
+} else if facing_direction=='right' {
+    if place_free(x, y+1) {
+        sprite_index = spt_jump_right
+    } else if x_speed == 0 {
         sprite_index=player_right
-    else
+        image_speed = 0.1
+    } else {
         sprite_index=player_run_right
+        image_speed = 0.25
+    }
 }
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_saw_chase">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="obj_turret">
@@ -358,6 +402,28 @@ else if room == simple_room
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room == rob1 or room == rob2 or room == rob3 
+    instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_send_back">
       <action>
@@ -377,9 +443,9 @@ else if room == simple_room
           <argument>
             <kind>1</kind>
             <string>x -= 1024
+win_on_screen_out = true
 with obj_bitcoin
     instance_destroy()
-win_on_screen_out = true
 </string>
           </argument>
         </arguments>
@@ -418,10 +484,7 @@ win_on_screen_out = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if win_on_screen_out 
-    room_goto_next()
-
-if room == smell_my_pit
+            <string>if room == smell_my_pit or room == rob1 or room == rob2 or room == random1 or room == saw_chase or win_on_screen_out
     room_goto_next()
 else
     room_restart()

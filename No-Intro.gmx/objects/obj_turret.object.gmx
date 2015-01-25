@@ -75,9 +75,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if x - player.x &lt; 1000 {
+            <string>if x - player.x &lt; 1200 {
     bul = instance_create(x+20, y+14, obj_bullet)
-    bul.hspeed = -15
+    bul.hspeed = -13
 }
 </string>
           </argument>
