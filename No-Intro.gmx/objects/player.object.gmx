@@ -45,7 +45,7 @@ control_down=ord('S')
 control_left=ord('A')
 control_right=ord('D')
 
-hacks=true
+hacks=false
 if hacks {
     control_low_gravity=ord('L')
     control_high_gravity=ord('K')
@@ -53,6 +53,7 @@ if hacks {
     control_left_rocket=vk_left
     control_right_rocket=vk_right
     control_up_rocket=vk_up
+    control_invuln=vk_space
 }
 
 grav=1
@@ -113,7 +114,7 @@ if room == rob3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if death==false {
+            <string>if death==false or (hacks==true and keyboard_check(control_invuln)){
 if hacks{
     if keyboard_check(control_low_gravity)
         grav=0
@@ -123,8 +124,10 @@ if hacks{
         grav=-2
     else
         grav=1
+    if keyboard_check(control_invuln)
+        death=true
 }
-
+runloop=false
 
 
 if place_free(x,y) {
@@ -139,13 +142,22 @@ if place_free(x,y) {
             x_accel=-ground_control_horiz_force
             if keyboard_check(control_right) and right_on
                 x_accel=0 //multiple directions cancel
-            else
+            else {
+                if not audio_is_playing(sound_run){
+                    audio_play_sound(sound_run,0,true)
+                }
+                runloop=true
                 facing_direction='left'
+            }
         }
         else {
             if keyboard_check(control_right) and right_on{
                 facing_direction='right'
                 x_accel=ground_control_horiz_force
+                if not audio_is_playing(sound_run){
+                    audio_play_sound(sound_run,0,true)
+                }
+                runloop=true
             } else {
                 x_accel=0 //firm stop on ground with no key press
             }
@@ -239,6 +251,9 @@ if place_free(x,y) {
             }
         }
     }
+    if runloop==false
+        audio_stop_sound(sound_run)
+    
     if hacks{
         if keyboard_check_pressed(control_left_rocket) {
             x_speed=-120
@@ -349,6 +364,7 @@ if facing_direction=='left' {
             <kind>1</kind>
             <string>if death==false {
     death=true
+    audio_play_sound(sound_death,10,false)
     if facing_direction=="left"
         sprite_index=player_death_left
     else
@@ -389,6 +405,7 @@ if facing_direction=='left' {
 else {
     if player.death==false {
         player.death=true
+        audio_play_sound(sound_death,10,false)
         if player.facing_direction=="left"
             player.sprite_index=player_death_left
         else
@@ -425,6 +442,7 @@ else {
           <argument>
             <kind>1</kind>
             <string>if death==false {
+    audio_play_sound(sound_death,10,false)
     death=true
     if facing_direction=="left"
         sprite_index=player_death_left
@@ -462,7 +480,8 @@ else {
           <argument>
             <kind>1</kind>
             <string>if room == smell_my_pit or room == loop_section{
-    if death==false {
+    if death==false or (hacks==true and keyboard_check(control_invuln)){
+        audio_play_sound(sound_death,10,false)
         death=true
         if facing_direction=="left"
             sprite_index=player_death_left
@@ -477,8 +496,14 @@ else {
     }
 }
 
-else if room == simple_room or room == saw_chase or room == jump_remove or room == long_wall_jump
-    room_goto_next()
+else {
+    if death==false or (hacks==true and keyboard_check(control_invuln)){
+        audio_play_sound(sound_coin,1,false)
+        if room == simple_room or room == saw_chase or room == jump_remove or room == long_wall_jump or room==boss_room {
+            room_goto_next()
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -551,6 +576,7 @@ with obj_bitcoin
             <kind>1</kind>
             <string>if death==false {
     death=true
+    audio_play_sound(sound_death,10,false)
     if facing_direction=="left"
         sprite_index=player_death_left
     else
@@ -586,7 +612,7 @@ with obj_bitcoin
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if death==true
+            <string>if death==true and not (hacks==true and keyboard_check(control_invuln))
     room_restart()
 </string>
           </argument>

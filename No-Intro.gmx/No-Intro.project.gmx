@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sound_coin</sound>
+    <sound>sound\sound_run</sound>
+    <sound>sound\sound_death</sound>
+    <sound>sound\sound_spectrolite</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_sprite</sprite>
     <sprite>sprites\wall_sprite</sprite>
@@ -46,12 +51,20 @@
     <sprite>sprites\spt_ladder</sprite>
     <sprite>sprites\spt_jump_left</sprite>
     <sprite>sprites\spt_jump_right</sprite>
+    <sprite>sprites\play_selected</sprite>
+    <sprite>sprites\credits_sprite</sprite>
+    <sprite>sprites\play_unselected</sprite>
     <sprite>sprites\spt_lr_button</sprite>
+    <sprite>sprites\quit_unselected</sprite>
+    <sprite>sprites\quit_selected</sprite>
+    <sprite>sprites\credits_unselected</sprite>
+    <sprite>sprites\credits_selected</sprite>
     <sprite>sprites\spt_ud_button</sprite>
     <sprite>sprites\spt_rando_button</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\wood_tileset</background>
+    <background>background\menu_background</background>
     <background>background\rotten_tileset</background>
     <background>background\ts_example</background>
     <background>background\disappearing_tileset</background>
@@ -62,6 +75,8 @@
     <background>background\metal_tileset1</background>
     <background>background\metal_tileset2</background>
     <background>background\metal_tileset3</background>
+    <background>background\tile_background</background>
+    <background>background\credits_background</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -70,11 +85,13 @@
     <object>objects\wall</object>
     <object>objects\menu_button_levels</object>
     <object>objects\menu_button_start</object>
+    <object>objects\menu_button_credits</object>
     <object>objects\menu_button_exit</object>
     <object>objects\add_letter</object>
     <object>objects\randomize_letter</object>
     <object>objects\level_button_menu</object>
     <object>objects\jump_remove_powerup</object>
+    <object>objects\player_credits</object>
     <object>objects\jump_return_powerup</object>
     <object>objects\obj_metal_wall</object>
     <object>objects\obj_wood_wall</object>
@@ -82,6 +99,7 @@
     <object>objects\obj_bullet</object>
     <object>objects\boss</object>
     <object>objects\obj_send_back</object>
+    <object>objects\player_credits_cling</object>
     <object>objects\obj_bitcoin</object>
     <object>objects\obj_breaking_block</object>
     <object>objects\obj_spikes</object>
@@ -104,6 +122,7 @@
     <room>rooms\saw_chase</room>
     <room>rooms\jump_remove</room>
     <room>rooms\long_wall_jump</room>
+    <room>rooms\boss_room</room>
     <room>rooms\end_room</room>
   </rooms>
   <help>
