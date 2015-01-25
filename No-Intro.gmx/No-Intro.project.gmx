@@ -9,10 +9,13 @@
     <sprite>sprites\player_sprite</sprite>
     <sprite>sprites\wall_sprite</sprite>
     <sprite>sprites\spt_wood_wall</sprite>
+    <sprite>sprites\orange_metal_wall_sprite</sprite>
     <sprite>sprites\player_right</sprite>
     <sprite>sprites\idle</sprite>
     <sprite>sprites\player_run_right</sprite>
     <sprite>sprites\player_run_left</sprite>
+    <sprite>sprites\player_cling_right</sprite>
+    <sprite>sprites\player_cling_left</sprite>
     <sprite>sprites\player_left</sprite>
     <sprite>sprites\sprite_bullet</sprite>
     <sprite>sprites\sprite_top_down_player</sprite>
@@ -20,6 +23,8 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spt_metal_wall</sprite>
+    <sprite>sprites\jump_return_sprite</sprite>
+    <sprite>sprites\jump_remove_sprite</sprite>
     <sprite>sprites\spt_wood_temp</sprite>
     <sprite>sprites\temp_button_sprite</sprite>
     <sprite>sprites\bullet</sprite>
@@ -45,7 +50,12 @@
   </sprites>
   <backgrounds name="background">
     <background>background\wood_tileset</background>
+    <background>background\rotten_tileset</background>
     <background>background\ts_example</background>
+    <background>background\disappearing_tileset</background>
+    <background>background\bg_01</background>
+    <background>background\orange_metal_tileset</background>
+    <background>background\bg_02</background>
     <background>background\metal_tileset</background>
     <background>background\metal_tileset1</background>
     <background>background\metal_tileset2</background>
@@ -62,8 +72,11 @@
     <object>objects\add_letter</object>
     <object>objects\randomize_letter</object>
     <object>objects\level_button_menu</object>
+    <object>objects\jump_remove_powerup</object>
+    <object>objects\jump_return_powerup</object>
     <object>objects\obj_metal_wall</object>
     <object>objects\obj_wood_wall</object>
+    <object>objects\obj_orange_metal_wall</object>
     <object>objects\obj_bullet</object>
     <object>objects\boss</object>
     <object>objects\obj_send_back</object>
@@ -80,7 +93,6 @@
   <rooms name="rooms">
     <room>rooms\title_screen</room>
     <room>rooms\simple_room</room>
-    <room>rooms\another_room</room>
     <room>rooms\smell_my_pit</room>
     <room>rooms\loop_section</room>
     <room>rooms\random1</room>
@@ -88,6 +100,9 @@
     <room>rooms\rob2</room>
     <room>rooms\rob3</room>
     <room>rooms\saw_chase</room>
+    <room>rooms\jump_remove</room>
+    <room>rooms\long_wall_jump</room>
+    <room>rooms\another_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

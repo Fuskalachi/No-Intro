@@ -451,9 +451,9 @@
     <instance objName="obj_spikes" x="1280" y="2944" name="inst_0E530CC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="1280" y="2944" name="inst_662509A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="1344" y="2944" name="inst_47A46714" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_special_platform_1" x="512" y="2688" name="inst_02A1C6CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_special_platform_1" x="448" y="2688" name="inst_13DF7EE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_special_platform_1" x="640" y="2688" name="inst_7D0E8089" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bitcoin" x="3648" y="2496" name="inst_5066F9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bitcoin" x="3840" y="2496" name="inst_BE10AC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bitcoin" x="3264" y="2496" name="inst_5CAB0767" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="384" y="2944" name="inst_B465EC02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="448" y="2944" name="inst_176A2F71" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="576" y="2944" name="inst_5653202A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -614,7 +614,7 @@
     <instance objName="obj_spikes" x="4032" y="2944" name="inst_52D9F744" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="2496" y="2944" name="inst_0659EAE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="640" y="2944" name="inst_B7BAD473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_special_platform_1" x="576" y="2688" name="inst_8C7A1273" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bitcoin" x="3456" y="2496" name="inst_F5D4C764" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spikes" x="1216" y="2944" name="inst_63A9AD04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wood_wall" x="256" y="3008" name="inst_FC9149F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wood_wall" x="320" y="3008" name="inst_4CA4E343" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -631,10 +631,10 @@
     <instance objName="obj_bitcoin" x="2688" y="2496" name="inst_814FD5C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bitcoin" x="2880" y="2496" name="inst_7D371613" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bitcoin" x="3072" y="2496" name="inst_4E08ABD2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bitcoin" x="3264" y="2496" name="inst_5CAB0767" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bitcoin" x="3456" y="2496" name="inst_F5D4C764" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bitcoin" x="3648" y="2496" name="inst_5066F9DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bitcoin" x="3840" y="2496" name="inst_BE10AC75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breaking_block" x="640" y="2688" name="inst_FC21F4D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breaking_block" x="576" y="2688" name="inst_EF219573" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breaking_block" x="512" y="2688" name="inst_CABF5E6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_breaking_block" x="448" y="2688" name="inst_B1980F94" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -31,6 +31,101 @@ var inst;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_type = obj_breaking_block
+left = false
+right = false
+up = false
+down = false
+ul = false
+ur = false
+dl = false
+dr = false
+if place_meeting(x, y+1, obj_type) down = true
+if place_meeting(x, y-1, obj_type) up = true
+if place_meeting(x+1, y, obj_type) right = true
+if place_meeting(x-1, y, obj_type) left = true
+
+if left
+    if right
+        if up
+            if down{
+                tile_add(rotten_tileset, 65, 65, 64, 64, x, y, depth)
+                if not place_meeting(x+64, y+64, obj_type) tile_add(rotten_tileset, 289, 33, 32, 32, x+32, y+32, depth) //down right
+                if not place_meeting(x-64, y+64, obj_type) tile_add(rotten_tileset, 321, 33, 32, 32, x, y+32, depth) //down left
+                if not place_meeting(x+64, y-64, obj_type) tile_add(rotten_tileset, 289, 65, 32, 32, x+32, y, depth) //up right
+                if not place_meeting(x-64, y-64, obj_type) tile_add(rotten_tileset, 321, 65, 32, 32, x, y, depth) //up left
+            } else {
+                tile_add(rotten_tileset, 65, 129, 64, 64, x, y, depth)
+                if not place_meeting(x+64, y-64, obj_type) tile_add(rotten_tileset, 289, 65, 32, 32, x+32, y, depth) //up right
+                if not place_meeting(x-64, y-64, obj_type) tile_add(rotten_tileset, 321, 65, 32, 32, x, y, depth) //up left
+            }
+        else if down {
+            tile_add(rotten_tileset, 65, 1, 64, 64, x, y, depth)
+            if not place_meeting(x+64, y+64, obj_type) tile_add(rotten_tileset, 289, 33, 32, 32, x+32, y+32, depth) //down right
+            if not place_meeting(x-64, y+64, obj_type) tile_add(rotten_tileset, 321, 33, 32, 32, x, y+32, depth) //down left
+         } else
+            tile_add(rotten_tileset, 65, 193, 64, 64, x, y, depth)
+    else if up
+        if down {
+            tile_add(rotten_tileset, 129, 65, 64, 64, x, y, depth)
+            if not place_meeting(x-64, y+64, obj_type) tile_add(rotten_tileset, 321, 33, 32, 32, x, y+32, depth) //down left
+            if not place_meeting(x-64, y-64, obj_type) tile_add(rotten_tileset, 321, 65, 32, 32, x, y, depth) //up left
+        } else {
+            tile_add(rotten_tileset, 129, 129, 64, 64, x, y, depth)
+            if not place_meeting(x-64, y-64, obj_type) tile_add(rotten_tileset, 321, 65, 32, 32, x, y, depth) //up left
+        }
+    else if down {
+        tile_add(rotten_tileset, 129, 1, 64, 64, x, y, depth)
+        if not place_meeting(x-64, y+64, obj_type) tile_add(rotten_tileset, 321, 33, 32, 32, x, y+32, depth) //down left
+    } else {
+        tile_add(rotten_tileset, 129, 193, 64, 64, x, y, depth)
+    }
+else if right
+    if up
+        if down {
+            tile_add(rotten_tileset, 1, 65, 64, 64, x, y, depth)
+            if not place_meeting(x+64, y+64, obj_type) tile_add(rotten_tileset, 289, 33, 32, 32, x+32, y+32, depth) //down right
+            if not place_meeting(x+64, y-64, obj_type) tile_add(rotten_tileset, 289, 65, 32, 32, x+32, y, depth) //up right
+        } else {
+            tile_add(rotten_tileset, 1, 129, 64, 64, x, y, depth)
+                if not place_meeting(x+64, y-64, obj_type) tile_add(rotten_tileset, 289, 65, 32, 32, x+32, y, depth) //up right
+        }
+    else if down {
+        tile_add(rotten_tileset, 1, 1, 64, 64, x, y, depth)
+        if not place_meeting(x+64, y+64, obj_type) tile_add(rotten_tileset, 289, 33, 32, 32, x+32, y+32, depth) //down right
+    } else {
+        tile_add(rotten_tileset, 1, 193, 64, 64, x, y, depth)
+    }
+else if up
+    if down
+        tile_add(rotten_tileset, 193, 65, 64, 64, x, y, depth)
+    else
+        tile_add(rotten_tileset, 193, 129, 64, 64, x, y, depth)
+else if down
+    tile_add(rotten_tileset, 193, 1, 64, 64, x, y, depth)
+else
+    tile_add(rotten_tileset, 193, 193, 64, 64, x, y, depth)
+    
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="1" enumb="0">
       <action>
@@ -65,6 +160,27 @@ if inst != noone
 }
    
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>tile_delete(tile_layer_find(depth,x,y))
 </string>
           </argument>
         </arguments>
