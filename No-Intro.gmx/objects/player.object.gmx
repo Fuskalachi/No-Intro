@@ -38,13 +38,14 @@ jump_on=true
 image_speed=.25
 facing_direction='right'
 win_on_screen_out = false
+death=false
 
 control_up=ord('W')
 control_down=ord('S')
 control_left=ord('A')
 control_right=ord('D')
 
-hacks=false
+hacks=true
 if hacks {
     control_low_gravity=ord('L')
     control_high_gravity=ord('K')
@@ -112,7 +113,8 @@ if room == rob3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hacks{
+            <string>if death==false {
+if hacks{
     if keyboard_check(control_low_gravity)
         grav=0
     else if keyboard_check(control_high_gravity)
@@ -320,6 +322,9 @@ if facing_direction=='left' {
         image_speed = 0.25
     }
 }
+} else {
+    move_contact_solid(270,3)
+}
 </string>
           </argument>
         </arguments>
@@ -328,17 +333,38 @@ if facing_direction=='left' {
     <event eventtype="4" ename="obj_saw_chase">
       <action>
         <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if death==false {
+    death=true
+    if facing_direction=="left"
+        sprite_index=player_death_left
+    else
+        sprite_index=player_death_right
+    image_speed=.125
+    jump_on=false
+    left_on=false
+    right_on=false
+    wall_jump_on=false
+    wall_cling_on=false
+}
+
+
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="4" ename="obj_turret">
@@ -360,8 +386,22 @@ if facing_direction=='left' {
             <kind>1</kind>
             <string>if y-player.y &gt; 50
     instance_destroy()
-else
-    room_restart()
+else {
+    if player.death==false {
+        player.death=true
+        if player.facing_direction=="left"
+            player.sprite_index=player_death_left
+        else
+            player.sprite_index=player_death_right
+        player.image_speed=.125
+        player.jump_on=false
+        player.left_on=false
+        player.right_on=false
+        player.wall_jump_on=false
+        player.wall_cling_on=false
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -384,7 +424,21 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart()
+            <string>if death==false {
+    death=true
+    if facing_direction=="left"
+        sprite_index=player_death_left
+    else
+        sprite_index=player_death_right
+    image_speed=.125
+    jump_on=false
+    left_on=false
+    right_on=false
+    wall_jump_on=false
+    wall_cling_on=false
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -407,9 +461,23 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if room == smell_my_pit or room == loop_section
-    room_restart()
-else if room == simple_room or room == saw_chase
+            <string>if room == smell_my_pit or room == loop_section{
+    if death==false {
+        death=true
+        if facing_direction=="left"
+            sprite_index=player_death_left
+        else
+            sprite_index=player_death_right
+        image_speed=.125
+        jump_on=false
+        left_on=false
+        right_on=false
+        wall_jump_on=false
+        wall_cling_on=false
+    }
+}
+
+else if room == simple_room or room == saw_chase or room == jump_remove or room == long_wall_jump
     room_goto_next()
 </string>
           </argument>
@@ -467,17 +535,62 @@ with obj_bitcoin
     <event eventtype="4" ename="obj_bullet">
       <action>
         <libid>1</libid>
-        <id>223</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_current_room</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if death==false {
+    death=true
+    if facing_direction=="left"
+        sprite_index=player_death_left
+    else
+        sprite_index=player_death_right
+    image_speed=.125
+    jump_on=false
+    left_on=false
+    right_on=false
+    wall_jump_on=false
+    wall_cling_on=false
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if death==true
+    room_restart()
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="7" enumb="0">
