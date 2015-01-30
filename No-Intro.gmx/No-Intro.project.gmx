@@ -122,9 +122,9 @@
     <room>rooms\saw_chase</room>
     <room>rooms\jump_remove</room>
     <room>rooms\long_wall_jump</room>
+    <room>rooms\another_room</room>
     <room>rooms\boss_room</room>
     <room>rooms\end_room</room>
-    <room>rooms\another_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
