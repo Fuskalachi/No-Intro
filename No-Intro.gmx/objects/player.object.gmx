@@ -645,7 +645,7 @@ else
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="97">
+    <event eventtype="9" enumb="49">
       <action>
         <libid>1</libid>
         <id>225</id>
@@ -675,7 +675,7 @@ else
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="9" enumb="96">
+    <event eventtype="9" enumb="48">
       <action>
         <libid>1</libid>
         <id>226</id>
