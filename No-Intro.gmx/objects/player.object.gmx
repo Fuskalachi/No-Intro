@@ -499,7 +499,7 @@ else {
 else {
     if death==false or (hacks==true and keyboard_check(control_invuln)){
         audio_play_sound(sound_coin,1,false)
-        if room == simple_room or room == saw_chase or room == jump_remove or room == long_wall_jump or room==boss_room {
+        if room == simple_room or room == saw_chase or room == jump_remove or room == long_wall_jump or room==another_room or room==boss_room {
             room_goto_next()
         }
     }
